@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Merci Marie & Sylvain</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2em;
+      background: linear-gradient(to right, #fff0f5, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .line {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+      font-size: 1.5em;
+      color: #333;
+      margin: 1em 0;
+    }
+
+    .line.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image {
+      width: 80%;
+      max-width: 500px;
+      margin: 2em auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .image.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .button-container {
+      margin-top: 2em;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .button-container.show {
+      opacity: 1;
+    }
+
+    .youtube-button {
+      background-color: #d63384;
+      color: white;
+      border: none;
+      padding: 1em 2em;
+      border-radius: 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .youtube-button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="line">Merci Marie, merci Sylvain.</h1>
+  <p class="line">Sans vous, nous ne serions pas là.</p>
+  <p class="line">Vous êtes bien plus que des repères : vous êtes des piliers.</p>
+  <p class="line">Grâce à vous, nous avons appris à avancer, à croire en nous, à aimer la vie.</p>
+  <p class="line">Chaque jour, par vos gestes, vos paroles, votre présence, vous nous apportez un équilibre précieux.</p>
+  <p class="line">Ce site n'est qu'un petit écrin pour vous dire quelque chose de grand :</p>
+  <p class="line"><strong>Merci pour tout. Pour aujourd’hui, pour hier, et pour demain.</strong></p>
+  <p class="line">Nous ne l’oublierons jamais.</p>
+
+  <img class="image" src="https://source.unsplash.com/800x600/?nature,flowers" alt="Paysage 1">
+  <img class="image" src="https://source.unsplash.com/800x600/?sunset,peace" alt="Paysage 2">
+  <img class="image" src="https://source.unsplash.com/800x600/?mountains,lake" alt="Paysage 3">
+  <img class="image" src="https://source.unsplash.com/800x600/?forest,path" alt="Paysage 4">
+
+  <div class="button-container">
+    <a class="youtube-button" href="https://www.youtube.com/shorts/Z8MF-7rYKBg" target="_blank">
+      🎬 Voir la vidéo finale sur YouTube
+    </a>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll('.line');
+    const images = document.querySelectorAll('.image');
+    const buttonContainer = document.querySelector('.button-container');
+
+    let delay = 0;
+    lines.forEach((line, i) => {
+      setTimeout(() => {
+        line.classList.add('show');
+      }, delay);
+      delay += 1800;
+    });
+
+    images.forEach((img, i) => {
+      setTimeout(() => {
+        img.classList.add('show');
+      }, delay);
+      delay += 2000;
+    });
+
+    setTimeout(() => {
+      buttonContainer.classList.add('show');
+    }, delay);
+  </script>
+
+</body>
+</html>
