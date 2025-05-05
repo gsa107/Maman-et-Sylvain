@@ -1,122 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merci Marie & Sylvain</title>
   <style>
     body {
-      margin: 0;
-      padding: 2em;
-      background: linear-gradient(to right, #fff0f5, #e0f7fa);
       font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff6f0, #ffe8dc);
+      margin: 0;
+      padding: 0;
       text-align: center;
+      color: #3e2c2c;
     }
-
-    .line {
+    h1 {
+      margin-top: 40px;
+      font-size: 3.2em;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 1.8em;
+      margin: 60px 30px;
+      animation: fadeIn 3s ease-in-out;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      animation: fadeInImages 4s ease-in-out;
+    }
+    .gallery img {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-      font-size: 1.5em;
-      color: #333;
-      margin: 1em 0;
+      animation: appear 1s ease forwards;
     }
+    .gallery img:nth-child(1) { animation-delay: 1s; }
+    .gallery img:nth-child(2) { animation-delay: 2s; }
+    .gallery img:nth-child(3) { animation-delay: 3s; }
 
-    .line.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .image {
-      width: 80%;
-      max-width: 500px;
-      margin: 2em auto;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .image.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .button-container {
-      margin-top: 2em;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .button-container.show {
-      opacity: 1;
-    }
-
-    .youtube-button {
-      background-color: #d63384;
-      color: white;
-      border: none;
-      padding: 1em 2em;
-      border-radius: 30px;
-      font-size: 1.1em;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
+    .button {
+      margin: 40px;
       display: inline-block;
+      background-color: #f28705;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.2em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #d96c00;
     }
 
-    .youtube-button:hover {
-      background-color: #c2185b;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInImages {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes appear {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
+  <h1>Merci Marie et Sylvain</h1>
+  <p>Sans vous, nous ne serions pas là. Vous êtes les piliers discrets mais puissants de notre vie. Merci pour votre amour, votre patience, votre présence. Ce site est un petit geste, mais il vient du fond du cœur.</p>
+  <p>Ce que vous donnez ne peut pas se mesurer : c’est un amour vrai, constant, désintéressé. Et c’est justement cela qui rend tout si précieux. Merci pour tout ce que vous êtes, et pour tout ce que vous avez fait. On vous aime très fort.</p>
 
-  <h1 class="line">Merci Marie, merci Sylvain.</h1>
-  <p class="line">Sans vous, nous ne serions pas là.</p>
-  <p class="line">Vous êtes bien plus que des repères : vous êtes des piliers.</p>
-  <p class="line">Grâce à vous, nous avons appris à avancer, à croire en nous, à aimer la vie.</p>
-  <p class="line">Chaque jour, par vos gestes, vos paroles, votre présence, vous nous apportez un équilibre précieux.</p>
-  <p class="line">Ce site n'est qu'un petit écrin pour vous dire quelque chose de grand :</p>
-  <p class="line"><strong>Merci pour tout. Pour aujourd’hui, pour hier, et pour demain.</strong></p>
-  <p class="line">Nous ne l’oublierons jamais.</p>
+  <a href="https://www.youtube.com/shorts/Z8MF-7rYKBg" target="_blank" class="button">Voir la vidéo sur YouTube</a>
 
-  <img class="image" src="https://source.unsplash.com/800x600/?nature,flowers" alt="Paysage 1">
-  <img class="image" src="https://source.unsplash.com/800x600/?sunset,peace" alt="Paysage 2">
-  <img class="image" src="https://source.unsplash.com/800x600/?mountains,lake" alt="Paysage 3">
-  <img class="image" src="https://source.unsplash.com/800x600/?forest,path" alt="Paysage 4">
-
-  <div class="button-container">
-    <a class="youtube-button" href="https://www.youtube.com/shorts/Z8MF-7rYKBg" target="_blank">
-      🎬 Voir la vidéo finale sur YouTube
-    </a>
+  <div class="gallery">
+    <img src="photo1.jpg" alt="Marie et Sylvain">
+    <img src="photo2.jpg" alt="Sylvain à Venise">
+    <img src="photo3.jpg" alt="Marie en train de peindre">
   </div>
-
-  <script>
-    const lines = document.querySelectorAll('.line');
-    const images = document.querySelectorAll('.image');
-    const buttonContainer = document.querySelector('.button-container');
-
-    let delay = 0;
-    lines.forEach((line, i) => {
-      setTimeout(() => {
-        line.classList.add('show');
-      }, delay);
-      delay += 1800;
-    });
-
-    images.forEach((img, i) => {
-      setTimeout(() => {
-        img.classList.add('show');
-      }, delay);
-      delay += 2000;
-    });
-
-    setTimeout(() => {
-      buttonContainer.classList.add('show');
-    }, delay);
-  </script>
-
 </body>
 </html>
